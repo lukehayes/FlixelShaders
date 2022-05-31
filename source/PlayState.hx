@@ -21,6 +21,15 @@ class PlayState extends FlxState
         add(this.sprites);
 
         this.shader = new BasicShader();
+
+        // Shaders work using this for some reason.
+        // 
+        //sprites.forEach(function(s)
+        //{
+            //s.shader = this.shader;
+        //});
+
+
         FlxG.game.setFilters([this.shader]);
     }
 
@@ -30,6 +39,10 @@ class PlayState extends FlxState
         sprites.update(elapsed);
     }
 
+
+    /**
+      Generate N number of test sprites.
+      **/
     private function genSprites(max:Int)
     {
         for(x in 0...5)
