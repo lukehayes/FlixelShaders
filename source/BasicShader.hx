@@ -3,7 +3,7 @@ package;
 import openfl.filters.BitmapFilter;
 import flixel.system.FlxAssets.FlxShader;
 
-class BasicShader extends FlxShader
+class BasicShader extends BitmapFilter
 {
     @:glFragmentSource('
      #pragma header
