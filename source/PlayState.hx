@@ -6,6 +6,7 @@ import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.group.FlxGroup;
 import BasicShader;
+import openfl.filters.ShaderFilter;
 
 
 class PlayState extends FlxState
@@ -21,15 +22,6 @@ class PlayState extends FlxState
         add(this.sprites);
 
         this.shader = new BasicShader();
-
-        // Shaders work using this for some reason.
-        // 
-        //sprites.forEach(function(s)
-        //{
-            //s.shader = this.shader;
-        //});
-
-
         FlxG.game.setFilters([this.shader]);
     }
 
@@ -48,7 +40,6 @@ class PlayState extends FlxState
         for(x in 0...5)
         {
             var sprite = new FlxSprite();
-            sprite.shader = this.shader;
             sprite.makeGraphic(100,100, FlxColor.WHITE);
             sprite.x = Math.random() * FlxG.width;
             sprite.y = Math.random() * FlxG.height;
