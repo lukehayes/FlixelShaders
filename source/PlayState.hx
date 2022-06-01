@@ -6,6 +6,7 @@ import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.group.FlxGroup;
 import BasicShader;
+import openfl.filters.ShaderFilter;
 
 
 class PlayState extends FlxState
@@ -21,7 +22,7 @@ class PlayState extends FlxState
         add(this.sprites);
 
         this.shader = new BasicShader();
-        FlxG.game.setFilters([this.shader]);
+        FlxG.game.setFilters([new ShaderFilter(new BasicShader())]);
     }
 
     override public function update(elapsed:Float)
@@ -35,7 +36,6 @@ class PlayState extends FlxState
         for(x in 0...5)
         {
             var sprite = new FlxSprite();
-            sprite.shader = this.shader;
             sprite.makeGraphic(100,100, FlxColor.WHITE);
             sprite.x = Math.random() * FlxG.width;
             sprite.y = Math.random() * FlxG.height;

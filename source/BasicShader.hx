@@ -1,6 +1,7 @@
 package;
 
 import openfl.filters.BitmapFilter;
+import openfl.filters.ShaderFilter;
 import flixel.system.FlxAssets.FlxShader;
 
 class BasicShader extends FlxShader
